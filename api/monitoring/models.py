@@ -6,14 +6,13 @@ class Plant(Model):
     name = CharField(max_length=255)
 
 
-class GetHumidityParams:
+class GetHumiditySampleListParams:
+    SAMPLES_DEFAULT = 100
 
     def __init__(self, data: dict):
-        self.plant_id = data['plantId']
-        try:
-            self.samples = data['samples']
-        except KeyError:
-            self.samples = 100
+        self.plant_id = data.get('plantId')
+        self.samples = data.get('samples', self.SAMPLES_DEFAULT)
+
 
 
 class HumiditySample(Model):

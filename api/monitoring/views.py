@@ -1,7 +1,7 @@
 import json
 from rest_framework.viewsets import ModelViewSet
 
-from monitoring.models import Plant, HumiditySample, GetHumidityParams
+from monitoring.models import Plant, HumiditySample, GetHumiditySampleListParams
 from monitoring.serializers import PlantSerializer, HumiditySampleSerializer
 
 
@@ -16,7 +16,7 @@ class HumiditySampleViewSet(ModelViewSet):
 
     def get_queryset(self):
         body = json.loads(self.request.body)
-        params = GetHumidityParams(body)
+        params = GetHumiditySampleListParams(body)
         return reversed(
             self.queryset.filter(plant_id=params.plant_id).order_by('-id')[:params.samples]
         )

@@ -8,7 +8,6 @@ Backend application for the Watering System project created in Python and Django
 ## Docker
  - build image: `docker-compose build`
  - run image: `docker-compose up`
- - run image: `docker-compose run api sh -c "[target command]"`
 
 ## Migrations
- - migrate: `docker-compose run api sh -c "python3 manage.py makemigrations api_core"`
+ - migrate: `docker-compose run api sh -c "python3 manage.py makemigrations monitoring"`
