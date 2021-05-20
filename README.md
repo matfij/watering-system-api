@@ -11,3 +11,6 @@ Backend application for the Watering System project created in Python and Django
 
 ## Migrations
  - migrate: `docker-compose run api sh -c "python3 manage.py makemigrations monitoring"`
+
+## Data importing
+ - import: `py api/tools/import.py [file-name]`

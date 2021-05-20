@@ -14,7 +14,6 @@ class GetHumiditySampleListParams:
         self.samples = data.get('samples', self.SAMPLES_DEFAULT)
 
 
-
 class HumiditySample(Model):
     id = AutoField(primary_key=True)
     plant_id = IntegerField(default=0)
